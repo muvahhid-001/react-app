@@ -2,13 +2,17 @@ import React from 'react'
 
 import ListItem from './list-item'
 
-const List = () => {
+const List = ({ data }) => {
+
+    const elements = data.map( (item) => {
+        return (
+            <li> <ListItem { ...item } /> </li>
+        )
+    })
+
     return (
-       <ul>
-        <li><ListItem title='Шамнсунг' label='X20Pro'/></li>
-        <li>Предсидание</li>
-        <li>Качала</li>
-        <li>Плавани</li>
+        <ul>
+        {elements}
        </ul>
     )
 }
